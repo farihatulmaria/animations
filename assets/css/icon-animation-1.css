@@ -27,7 +27,8 @@ i {
 }
 .bar-icon,
 .circle-icon,
-.square-icon {
+.square-icon,
+.double-icon {
   position: relative;
   z-index: 2;
   display: flex;
@@ -38,11 +39,13 @@ i {
   font-size: 40px;
   margin: 15px;
 }
-.bar-icon {
+.bar-icon,
+.circle-icon {
   overflow: hidden;
 }
 .bar-icon,
-.square-icon {
+.square-icon,
+.double-icon {
   width: 118px;
   height: 100px;
 }
@@ -50,20 +53,20 @@ i {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  overflow: hidden;
 }
 .small-icon {
   width: 50px;
   height: 50px;
   font-size: 30px;
 }
-
 /* icon's after */
 
 .bar-icon::after,
 .circle-icon::after,
 .side-hover::after,
-.square-icon::after {
+.square-icon::after,
+.double-icon::after,
+.double-icon::before {
   position: absolute;
   width: 100%;
   background: #000;
@@ -137,7 +140,36 @@ i {
 .side-hover-down::after {
   top: 100px;
 }
-
+.double-icon::before,
+.double-icon::after {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.double-normal::before {
+  top: -7px;
+  left: 0;
+}
+.double-normal::after {
+  bottom: -7px;
+  right: 0;
+}
+.double-reverse::before {
+  bottom: -7px;
+  left: 0;
+}
+.double-reverse::after {
+  top: -7px;
+  right: 0;
+}
+.double-center::before {
+  top: 40%;
+  left: -12px;
+}
+.double-center::after {
+  top: 40%;
+  right: -12px;
+}
 /* hover */
 
 .bar-icon:hover::after {
@@ -188,11 +220,35 @@ i {
 .side-hover-down:hover::after {
   top: 0;
 }
-
+.double-icon:hover::before,
+.double-icon:hover::after {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+.double-normal:hover::before,
+.double-reverse:hover::after {
+  top: 0;
+}
+.double-normal:hover::after,
+.double-reverse:hover::before {
+  bottom: 0;
+}
+.double-center:hover::before,
+.double-center:hover::after {
+  top: 0;
+}
+.double-center:hover::before {
+  left: 0;
+}
+.double-center:hover::after {
+  right: 0;
+}
 /* icon hover */
 .bar-icon:hover i,
 .circle-icon:hover i,
-.square-icon:hover i {
+.square-icon:hover i,
+.double-icon:hover i {
   color: #fff !important;
 }
 
@@ -205,7 +261,8 @@ i {
 #facebook i {
   color: #1877f2;
 }
-#facebook:after {
+#facebook::before,
+#facebook::after {
   background: #1877f2;
 }
 /* youtube  */
@@ -213,7 +270,8 @@ i {
 #youtube i {
   color: #ff0000;
 }
-#youtube:after {
+#youtube::before,
+#youtube::after {
   background: #ff0000;
 }
 
@@ -222,7 +280,8 @@ i {
 #whatsapp i {
   color: #31ba45;
 }
-#whatsapp:after {
+#whatsapp::before,
+#whatsapp::after {
   background: #31ba45;
 }
 
@@ -231,7 +290,8 @@ i {
 #airbnb i {
   color: #ff385c;
 }
-#airbnb:after {
+#airbnb::before,
+#airbnb::after {
   background: #ff385c;
 }
 
@@ -240,6 +300,7 @@ i {
 #apple i {
   color: #cccccc;
 }
-#apple:after {
+#apple::before,
+#apple::after {
   background: #cccccc;
 }
