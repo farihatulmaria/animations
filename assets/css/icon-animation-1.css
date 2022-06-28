@@ -18,8 +18,12 @@ i {
   justify-content: center;
   align-items: center;
 }
+.shadow {
+  box-shadow: 3px 3px 0px #b8b8b8;
+}
 .icon-container,
-.circle-icon {
+.circle-icon,
+.down-icon {
   position: relative;
   z-index: 2;
   display: flex;
@@ -30,7 +34,8 @@ i {
   font-size: 40px;
   margin: 15px;
 }
-.icon-container {
+.icon-container,
+.down-icon {
   width: 118px;
   height: 100px;
 }
@@ -40,8 +45,14 @@ i {
   border-radius: 50%;
   overflow: hidden;
 }
+.small-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+}
 .icon-container::after,
-.circle-icon::after {
+.circle-icon::after,
+.down-icon::after {
   position: absolute;
   width: 100%;
   background: #000;
@@ -50,10 +61,14 @@ i {
   z-index: -1;
   content: "";
 }
-.icon-container::after {
+.icon-container::after,
+.down-icon::after {
   bottom: 0;
   left: 0;
   height: 5%;
+}
+.down-icon::after {
+  top: 0;
 }
 .circle-icon::after {
   top: 0;
@@ -62,14 +77,16 @@ i {
   border-radius: 50%;
   transform: scale(0);
 }
-.icon-container:hover::after {
+.icon-container:hover::after,
+.down-icon:hover::after {
   height: 100%;
 }
 .circle-icon:hover::after {
   transform: scale(1);
 }
 .icon-container:hover i,
-.circle-icon:hover i {
+.circle-icon:hover i,
+.down-icon:hover i {
   color: #fff !important;
 }
 
@@ -126,6 +143,7 @@ i {
   .container {
     width: auto;
     height: auto;
+    display: block;
   }
 }
 
