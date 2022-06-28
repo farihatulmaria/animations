@@ -5,7 +5,7 @@
 body {
   width: 99%;
   height: 90vh;
-  background-color: whitesmoke;
+  background: #eee;
 }
 i {
   transition: all 0.5s;
@@ -20,10 +20,14 @@ i {
 }
 .shadow {
   box-shadow: 3px 3px 0px #b8b8b8;
+  transition: all 0.2s;
 }
-.icon-container,
+.shadow:hover {
+  box-shadow: 6px 6px 0px #b8b8b8;
+}
+.bar-icon,
 .circle-icon,
-.down-icon {
+.square-icon {
   position: relative;
   z-index: 2;
   display: flex;
@@ -34,8 +38,11 @@ i {
   font-size: 40px;
   margin: 15px;
 }
-.icon-container,
-.down-icon {
+.bar-icon {
+  overflow: hidden;
+}
+.bar-icon,
+.square-icon {
   width: 118px;
   height: 100px;
 }
@@ -50,9 +57,13 @@ i {
   height: 50px;
   font-size: 30px;
 }
-.icon-container::after,
+
+/* icon's after */
+
+.bar-icon::after,
 .circle-icon::after,
-.down-icon::after {
+.side-hover::after,
+.square-icon::after {
   position: absolute;
   width: 100%;
   background: #000;
@@ -61,32 +72,127 @@ i {
   z-index: -1;
   content: "";
 }
-.icon-container::after,
-.down-icon::after {
-  bottom: 0;
-  left: 0;
+.bar-icon::after {
   height: 5%;
+  left: 0;
 }
-.down-icon::after {
+.bar-up::after {
+  bottom: 0;
+}
+.bar-down::after {
   top: 0;
+}
+.bar-left::after {
+  width: 5%;
+  height: 100%;
+  left: 0;
+}
+.bar-right::after {
+  width: 5%;
+  height: 100%;
+  left: 112px;
 }
 .circle-icon::after {
   top: 0;
-  left: 0;
   height: 100%;
   border-radius: 50%;
   transform: scale(0);
 }
-.icon-container:hover::after,
-.down-icon:hover::after {
+
+.square-icon::after {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.square-top-left::after {
+  top: -7px;
+  left: -10px;
+}
+.square-top-right::after {
+  top: -7px;
+  right: -10px;
+}
+.square-bottom-left::after {
+  bottom: -7px;
+  left: -10px;
+}
+.square-bottom-right::after {
+  bottom: -7px;
+  right: -10px;
+}
+
+.side-hover::after {
+  top: 0;
+  transform: scale(1);
+}
+.side-hover-left::after {
+  left: -100px;
+}
+.side-hover-right::after {
+  right: -100px;
+}
+.side-hover-up::after {
+  top: -100px;
+}
+.side-hover-down::after {
+  top: 100px;
+}
+
+/* hover */
+
+.bar-icon:hover::after {
   height: 100%;
+}
+.bar-left:hover::after {
+  width: 100%;
+}
+.bar-right:hover::after {
+  left: 0;
+  width: 100%;
 }
 .circle-icon:hover::after {
   transform: scale(1);
 }
-.icon-container:hover i,
+
+.square-icon:hover::after {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+.square-top-left:hover::after {
+  top: 0;
+  left: 0;
+}
+.square-top-right:hover::after {
+  top: 0;
+  right: 0;
+}
+.square-bottom-left:hover::after {
+  bottom: 0;
+  left: 0;
+}
+.square-bottom-right:hover::after {
+  bottom: 0;
+  right: 0;
+}
+
+.side-hover-left:hover::after {
+  left: 0;
+}
+.side-hover-right:hover::after {
+  right: 0;
+}
+.side-hover-up:hover::after {
+  top: 0;
+}
+.side-hover-down:hover::after {
+  top: 0;
+}
+
+/* icon hover */
+.bar-icon:hover i,
 .circle-icon:hover i,
-.down-icon:hover i {
+.square-icon:hover i {
   color: #fff !important;
 }
 
@@ -100,7 +206,7 @@ i {
   color: #1877f2;
 }
 #facebook:after {
-  background-color: #1877f2;
+  background: #1877f2;
 }
 /* youtube  */
 
@@ -108,7 +214,7 @@ i {
   color: #ff0000;
 }
 #youtube:after {
-  background-color: #ff0000;
+  background: #ff0000;
 }
 
 /* whatsapp  */
@@ -117,7 +223,7 @@ i {
   color: #31ba45;
 }
 #whatsapp:after {
-  background-color: #31ba45;
+  background: #31ba45;
 }
 
 /* #airbnb */
@@ -126,7 +232,7 @@ i {
   color: #ff385c;
 }
 #airbnb:after {
-  background-color: #ff385c;
+  background: #ff385c;
 }
 
 /* #apple */
@@ -135,23 +241,5 @@ i {
   color: #cccccc;
 }
 #apple:after {
-  background-color: #cccccc;
-}
-
-/* Responsive css */
-@media screen and (max-width: 768px) {
-  .container {
-    width: auto;
-    height: auto;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 640px) {
-}
-
-@media screen and (max-width: 480px) {
-}
-
-@media screen and (max-width: 320px) {
+  background: #cccccc;
 }
