@@ -10,21 +10,21 @@ button {
 
 /* button-1 */
 .button-1 {
-  background-color: #0095ff;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
   color: #fff;
   font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
     sans-serif;
   padding: 8px 0.8em;
-  vertical-align: baseline;
+  background: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
   white-space: nowrap;
+  vertical-align: baseline;
 }
 
 .button-1:hover,
 .button-1:focus {
-  background-color: #07c;
+  background: #07c;
 }
 
 .button-1:focus {
@@ -32,13 +32,13 @@ button {
 }
 
 .button-1:active {
-  background-color: #0064bd;
+  background: #0064bd;
   box-shadow: none;
 }
 /* button-2  */
 .button-2 {
   align-items: center;
-  background-color: #fff;
+  background: #fff;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
     rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
@@ -94,7 +94,7 @@ button {
 
 /* button-3  */
 .button-3 {
-  background-color: #1899d6;
+  background: #1899d6;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -120,7 +120,7 @@ button {
   right: 0;
   top: 0;
   background-clip: padding-box;
-  background-color: #1cb0f6;
+  background: #1cb0f6;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -181,7 +181,7 @@ button {
 }
 /* button-5 */
 .button-5 {
-  background-color: #fcfcfd;
+  background: #fcfcfd;
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
@@ -205,7 +205,7 @@ button {
 }
 /* button-6*/
 .button-6 {
-  background-color: #fff;
+  background: #fff;
   border: 2px solid #000;
   box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
   color: #41403e;
@@ -213,10 +213,10 @@ button {
   line-height: 23px;
   padding: 0.75rem;
   transition: 235ms ease-in-out;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius: 15px 255px;
 }
 
 .button-6:hover {
@@ -267,7 +267,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #142850;
+  background: #142850;
   transform-origin: bottom center;
   transition: 600ms cubic-bezier(0.48, 0, 0.12, 1);
   transform: skewY(9.3deg) scaleY(0);
@@ -366,8 +366,8 @@ button {
 
 /* button-9 */
 .button-9 {
-  /* background-color: #f6f9fe; */
-  background-color: #000;
+  /* background: #f6f9fe; */
+  background: #000;
   color: #fff;
   padding: 8px 25px;
   border-radius: 20px;
@@ -384,7 +384,7 @@ button {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #fff;
+  background: #fff;
   transition: 0.5s;
   content: "";
 }
@@ -410,7 +410,7 @@ button {
 
 /* button-10 */
 .button-10 {
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #000;
   color: #000;
   padding: 10px 30px;
@@ -436,7 +436,7 @@ button {
   display: none;
 }
 .button-10:hover {
-  background-color: #000;
+  background: #000;
   border-color: #fff;
   color: #fff;
 }
@@ -449,8 +449,102 @@ button {
 .button-10:hover .back::after {
   top: 8px;
   left: 8px;
-  background-color: #fff;
+  background: #fff;
   width: 20px;
   height: 20px;
   border-radius: 50%;
+}
+
+.button-11 {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.button-11::after,
+.button-11::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all 0.4s;
+}
+
+.button-11::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.button-11::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button-11:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-11:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-11:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.button-12 {
+  background: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.button-12:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
