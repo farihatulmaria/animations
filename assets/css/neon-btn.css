@@ -6,6 +6,8 @@
 }
 body {
   display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   flex-direction: column;
   background: #050801;
@@ -14,7 +16,7 @@ a {
   position: relative;
   display: inline-block;
   padding: 25px 30px;
-  margin: 40px 0px;
+  margin: 40px;
   color: #03e9f4;
   font-size: 24px;
   text-decoration: none;
@@ -109,5 +111,12 @@ a span:nth-child(4) {
   50%,
   100% {
     bottom: 100%;
+  }
+}
+/* Responsive css */
+
+@media screen and (max-width: 640px) {
+  div {
+    text-align: center;
   }
 }

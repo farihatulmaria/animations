@@ -131,3 +131,20 @@ i {
 #bootstrap:after {
   background-color: #7952b3;
 }
+
+/* Responsive css */
+@media screen and (max-width: 768px) {
+  .container {
+    width: auto;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 320px) {
+}
