@@ -7,22 +7,22 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #9c27b0;
+  background: #748da6;
   animation: animate-bg 3s ease-in-out infinite;
 }
 @keyframes animate-bg {
   0%,
   100% {
-    background: #9c27b0;
+    background: #b1d1c5;
   }
   20% {
-    background: #35008a;
+    background: #54bab9;
   }
   50% {
-    background: #304add;
+    background: #048998;
   }
   80% {
-    background: #d701fd;
+    background: #143a52;
   }
 }
 .loader {
