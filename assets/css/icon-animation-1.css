@@ -28,9 +28,11 @@ i {
 .bar-icon,
 .circle-icon,
 .square-icon,
-.double-icon {
+.double-icon,
+.puls-icon,
+.box-icon {
   position: relative;
-  z-index: 2;
+  z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,11 +47,13 @@ i {
 }
 .bar-icon,
 .square-icon,
-.double-icon {
+.double-icon,
+.box-icon {
   width: 118px;
   height: 100px;
 }
-.circle-icon {
+.circle-icon,
+.puls-icon {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -59,14 +63,23 @@ i {
   height: 50px;
   font-size: 30px;
 }
-/* icon's after */
+.puls-icon {
+  z-index: unset;
+}
+/*===========================
+        ICON'S AFTER 
+============================*/
 
 .bar-icon::after,
 .circle-icon::after,
 .side-hover::after,
 .square-icon::after,
 .double-icon::after,
-.double-icon::before {
+.double-icon::before,
+.puls-icon::before,
+.puls-icon::after,
+.box-icon::after,
+.box-icon::before {
   position: absolute;
   width: 100%;
   background: #000;
@@ -100,6 +113,21 @@ i {
   height: 100%;
   border-radius: 50%;
   transform: scale(0);
+}
+
+.puls-icon::after,
+.puls-icon::before {
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+@keyframes puls {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
 }
 
 .square-icon::after {
@@ -170,7 +198,33 @@ i {
   top: 40%;
   right: -12px;
 }
-/* hover */
+.box-icon::after {
+  width: 30px;
+  height: 15px;
+  bottom: -7px;
+  right: 6px;
+}
+.box-icon::before {
+  width: 30px;
+  height: 15px;
+  top: -5px;
+  left: 9px;
+}
+.box-down::before {
+  width: 15px;
+  height: 30px;
+  top: 9px;
+  left: -9px;
+}
+.box-down::after {
+  width: 15px;
+  height: 30px;
+  bottom: 6px;
+  right: -9px;
+}
+/*===========================
+        HOVER
+============================*/
 
 .bar-icon:hover::after {
   height: 100%;
@@ -185,7 +239,6 @@ i {
 .circle-icon:hover::after {
   transform: scale(1);
 }
-
 .square-icon:hover::after {
   width: 100%;
   height: 100%;
@@ -244,7 +297,32 @@ i {
 .double-center:hover::after {
   right: 0;
 }
-/* icon hover */
+.animate-puls {
+  margin: 0 50px;
+}
+.animate-puls::after,
+.puls-icon:hover::after {
+  animation: puls 2000ms infinite;
+  animation-delay: 0.1s;
+}
+.animate-puls::before,
+.puls-icon:hover::before {
+  animation: puls 2000ms infinite;
+  animation-delay: 0.4s;
+}
+.box-icon:hover::after {
+  transform: translate(-70px);
+}
+.box-icon:hover::before {
+  transform: translate(70px);
+}
+.box-down:hover::before {
+  top: 65px;
+  transform: translate(0px);
+}
+/*===========================
+        ICON HOVER 
+============================*/
 .bar-icon:hover i,
 .circle-icon:hover i,
 .square-icon:hover i,
@@ -303,4 +381,22 @@ i {
 #apple::before,
 #apple::after {
   background: #cccccc;
+}
+/* #twitter */
+
+#twitter i {
+  color: #1da0f2;
+}
+#twitter::before,
+#twitter::after {
+  background: #1da0f2;
+}
+/* #twitter */
+
+#linkedin i {
+  color: #0a66c2;
+}
+#linkedin::before,
+#linkedin::after {
+  background: #0a66c2;
 }
